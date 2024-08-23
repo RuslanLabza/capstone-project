@@ -1,6 +1,6 @@
 export default function Nav() {
     return (
-        <nav>
+        <nav className="App-nav">
             <ul>
                 <li><a href='#'>Home</a></li>
                 <li><a href='#'>About</a></li>
@@ -11,4 +11,4 @@ export default function Nav() {
             </ul>
         </nav>
     );
-  }
+}

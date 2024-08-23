@@ -1,8 +1,8 @@
-import logo from "../assets/images/Logo .svg"
+import logo from "../assets/images/Logo.svg";
 
 export default function Footer() {
     return (
-        <footer>
+        <footer className="App-footer">
             <img src={logo} alt="lemon rest"/>
             <div>
                 <h4>Doormat Navigation</h4>
@@ -20,19 +20,19 @@ export default function Footer() {
             <div>
                 <h4>Contact</h4>
                 <ul>
-                    <li>Address</li>
-                    <li>Phone number</li>
-                    <li>Email</li>
+                    <li><a href='#'>Address</a></li>
+                    <li><a href='#'>Phone number</a></li>
+                    <li><a href='#'>Email</a></li>
                 </ul>
             </div>
             <div>
-                <h4>Social media links</h4>
+                <h4>Social Media Links</h4>
                 <ul>
-                    <li>Address</li>
-                    <li>Phone number</li>
-                    <li>Email</li>
+                    <li><a href='#'>Facebook</a></li>
+                    <li><a href='#'>Instagram</a></li>
+                    <li><a href='#'>Twitter</a></li>
                 </ul>
             </div>
         </footer>
     );
-  }
+}
