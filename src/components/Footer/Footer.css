@@ -1,0 +1,57 @@
+.App-footer {
+  grid-area: footer;
+  background-color: white;
+  padding: 20px;
+  color: #495e57;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  gap: 20px;
+}
+
+.App-footer img {
+  height: 50px;
+  margin-bottom: 0;
+}
+
+.App-footer div {
+  margin-bottom: 0;
+}
+
+.App-footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.App-footer a {
+  color: #495e57;
+  text-decoration: none;
+}
+
+.App-footer a:hover {
+  text-decoration: underline;
+}
+
+.App-footer h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-align: left;
+}
+
+@media (width <= 768px) {
+  .App-footer {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .App-footer img {
+    margin-bottom: 10px;
+  }
+
+  .App-footer div {
+    margin-bottom: 10px;
+  }
+}

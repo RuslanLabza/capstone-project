@@ -1,0 +1,89 @@
+.App-header {
+  grid-area: header;
+  background-color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.App-header img {
+  height: 70px;
+  margin-right: 20px;
+}
+
+.App-header nav {
+  flex-grow: 1;
+}
+
+.App-header ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.App-header li {
+  margin: 0 15px;
+}
+
+.App-header a {
+  color: #495e57;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.App-header a:hover {
+  color: #333;
+}
+
+@media (width <= 768px) {
+  .App-header {
+    padding: 10px;
+  }
+
+  .App-header img {
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  .App-header ul {
+    justify-content: space-around;
+  }
+
+  .App-header li {
+    margin: 5px 10px;
+  }
+
+  .App-header a {
+    font-size: 16px;
+  }
+}
+
+@media (width <= 480px) {
+  .App-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .App-header img {
+    margin-bottom: 10px;
+  }
+
+  .App-header ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .App-header li {
+    margin: 10px 0;
+  }
+
+  .App-header a {
+    font-size: 16px;
+  }
+}
