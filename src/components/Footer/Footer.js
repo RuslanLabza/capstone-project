@@ -3,7 +3,8 @@ import logo from '../../assets/images/Logo.svg';
 
 export default function Footer() {
   return (
-    <footer className="App-footer">
+    <footer className="footer">
+      <div className='container footer-container'>
       <img src={logo} alt="lemon rest" />
       <div>
         <h4>Doormat Navigation</h4>
@@ -57,6 +58,7 @@ export default function Footer() {
             <a href="#">Twitter</a>
           </li>
         </ul>
+      </div>
       </div>
     </footer>
   );

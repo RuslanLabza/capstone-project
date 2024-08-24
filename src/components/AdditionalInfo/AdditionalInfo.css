@@ -1,4 +1,31 @@
 .additional-info-section {
-  text-align: center;
-  margin-top: 50px;
+  background-color: #f4f4f4;
+}
+
+.additional-info-section-container {
+  padding: 50px 20px;
+  background-color: #f4f4f4;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  gap: 40px;
+}
+
+.additional-info-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.additional-info-section p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.additional-info-section .footer-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.additional-info-section .footer-nav ul li {
+  margin-bottom: 10px;
 }

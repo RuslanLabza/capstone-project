@@ -2,7 +2,7 @@ import './Nav.css';
 
 export default function Nav() {
   return (
-    <nav className="App-nav">
+    <nav className="nav">
       <ul>
         <li>
           <a href="#">Home</a>

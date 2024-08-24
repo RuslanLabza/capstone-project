@@ -1,6 +1,8 @@
-.App-footer {
-  grid-area: footer;
+.footer {
   background-color: white;
+}
+
+.footer-container {
   padding: 20px;
   color: #495e57;
   text-align: center;
@@ -10,48 +12,48 @@
   gap: 20px;
 }
 
-.App-footer img {
+.footer img {
   height: 50px;
   margin-bottom: 0;
 }
 
-.App-footer div {
+.footer div {
   margin-bottom: 0;
 }
 
-.App-footer ul {
+.footer ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
   text-align: left;
 }
 
-.App-footer a {
+.footer a {
   color: #495e57;
   text-decoration: none;
 }
 
-.App-footer a:hover {
+.footer a:hover {
   text-decoration: underline;
 }
 
-.App-footer h4 {
+.footer h4 {
   margin-bottom: 15px;
   font-size: 18px;
   text-align: left;
 }
 
 @media (width <= 768px) {
-  .App-footer {
+  .footer {
     flex-direction: column;
     text-align: left;
   }
 
-  .App-footer img {
+  .footer img {
     margin-bottom: 10px;
   }
 
-  .App-footer div {
+  .footer div {
     margin-bottom: 10px;
   }
 }

@@ -1,6 +1,8 @@
-.App-header {
-  grid-area: header;
+.header {
   background-color: white;
+}
+
+.header-container {
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -8,16 +10,12 @@
   flex-wrap: wrap;
 }
 
-.App-header img {
+.header img {
   height: 70px;
   margin-right: 20px;
 }
 
-.App-header nav {
-  flex-grow: 1;
-}
-
-.App-header ul {
+.header ul {
   display: flex;
   list-style-type: none;
   margin: 0;
@@ -26,64 +24,64 @@
   flex-wrap: wrap;
 }
 
-.App-header li {
+.header li {
   margin: 0 15px;
 }
 
-.App-header a {
+.header a {
   color: #495e57;
   text-decoration: none;
   font-weight: bold;
   font-size: 18px;
 }
 
-.App-header a:hover {
+.header a:hover {
   color: #333;
 }
 
 @media (width <= 768px) {
-  .App-header {
+  .header-container {
     padding: 10px;
   }
 
-  .App-header img {
+  .header img {
     height: 50px;
     margin-right: 10px;
   }
 
-  .App-header ul {
+  .header ul {
     justify-content: space-around;
   }
 
-  .App-header li {
+  .header li {
     margin: 5px 10px;
   }
 
-  .App-header a {
+  .header a {
     font-size: 16px;
   }
 }
 
 @media (width <= 480px) {
-  .App-header {
+  .header-container {
     flex-direction: column;
     align-items: center;
   }
 
-  .App-header img {
+  .header img {
     margin-bottom: 10px;
   }
 
-  .App-header ul {
+  .header ul {
     flex-direction: column;
     align-items: center;
   }
 
-  .App-header li {
+  .header li {
     margin: 10px 0;
   }
 
-  .App-header a {
+  .header a {
     font-size: 16px;
   }
 }

@@ -1,4 +1,47 @@
 .description-section {
-  text-align: center;
-  margin-bottom: 50px;
+  background-color: #fff;
+}
+
+.description-section-container {
+  padding: 50px 20px;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: auto;
+  align-items: center;
+  gap: 20px;
+}
+
+.description-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.description-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.description-section button {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  cursor: pointer;
+}
+
+.description-section button:hover {
+  background-color: #0056b3;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
