@@ -7,7 +7,7 @@ export default function Header() {
     <header className="header">
       <div className="container header-container">
         <a href="#">
-          <img src={logo} alt="little lemon logo"></img>
+          <img className='logo' src={logo} alt="little lemon logo"></img>
         </a>
         <Nav />
       </div>

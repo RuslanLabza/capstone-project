@@ -1,3 +1,19 @@
+.burger-menu-button {
+  display: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  margin: 0;
+}
+
+.burger-menu-icon {
+  width: 100%;
+  margin: 0;
+}
+
 .nav {
   padding: 20px 0;
 }
@@ -23,4 +39,35 @@
 
 .nav a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .burger-menu-button {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .nav.show {
+    position: absolute;
+    text-align: center;
+    top: 74px;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav li {
+    margin: 15px 0;
+  }
 }
