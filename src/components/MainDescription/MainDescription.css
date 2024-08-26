@@ -1,47 +1,62 @@
 .description-section {
-  background-color: #fff;
+  background-color: rgb(73, 94, 87);
 }
 
 .description-section-container {
   padding: 50px 20px;
   text-align: left;
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  grid-template-rows: auto;
-  align-items: center;
+  display: flex;
+  justify-content: space-between;
   gap: 20px;
 }
 
+.description-section-text {
+  width: 35%;
+}
+
 .description-section h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #333;
+  font-size: 3.5rem;
+  margin: 0;
+  color: rgb(195, 165, 16);
 }
 
 .description-section p {
   font-size: 1.2rem;
-  margin-bottom: 20px;
-  color: #666;
+  margin: 0;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.description-section .description-section-city {
+  font-size: 2rem;
 }
 
 .description-section button {
   padding: 10px 20px;
   font-size: 1.1rem;
-  color: #fff;
-  background-color: #007bff;
+  color: #000;
+  background-color: rgb(244, 206, 20);
+  border-radius: 10px;
   border: none;
   cursor: pointer;
 }
 
 .description-section button:hover {
-  background-color: #0056b3;
+  background-color: rgb(195, 165, 16);
 }
 
-.hero-image {
+.description-section-image-container {
+  height: auto;
+  border-radius: 10px;
+  width: 25rem;
+  height: 25rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.description-section-image {
   width: 100%;
   height: auto;
-  background-color: #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  top: -50px;
 }

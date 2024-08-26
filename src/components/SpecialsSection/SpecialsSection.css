@@ -1,66 +1,79 @@
-.specials-section {
-  background-color: #f9f9f9;
-}
-
 .specials-section-container {
   padding: 50px 20px;
-  text-align: center;
+}
+
+.special-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
 }
 
 .specials-section h2 {
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin: 0;
   color: #333;
 }
 
-.specials-section .specials-grid {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 20px;
-}
-
-.specials-section .special-item {
-  background-color: #fff;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.specials-section .image-placeholder {
-  width: 100%;
-  height: 200px;
-  background-color: #ddd;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.specials-section h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.specials-section p {
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 15px;
-}
-
 .specials-section button {
-  padding: 8px 16px;
-  font-size: 1rem;
-  color: #fff;
-  background-color: #28a745;
+  padding: 20px 30px;
+  font-size: 1.1rem;
+  color: #000;
+  background-color: rgb(244, 206, 20);
+  border-radius: 10px;
   border: none;
   cursor: pointer;
 }
 
 .specials-section button:hover {
-  background-color: #218838;
+  background-color: rgb(195, 165, 16);
+}
+
+.special-items-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.special-item {
+  background-color: rgb(237, 239, 238);
+  flex-grow: 1;
+  border-radius: 1rem;
+  width: 23rem;
+}
+
+.special-item-image-container {
+  height: auto;
+  width: 100%;
+  height: 15rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.special-item-image-container img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+}
+
+.special-item-description {
+  padding: 1rem;
+}
+
+.special-item-description h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.special-item-description p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.special-item-description button {
+  padding: 0.5rem;
 }
