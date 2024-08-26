@@ -14,7 +14,7 @@ export default function MainDescription() {
           </p>
           <button>Reserve a Table</button>
         </div>
-        <div class="description-section-image-container">
+        <div className="description-section-image-container">
           <img
             className="description-section-image"
             src={image}

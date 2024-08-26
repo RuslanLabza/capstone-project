@@ -1,4 +1,5 @@
 import './SpecialsSection.css';
+import SpecialItem from './SpecialItem';
 import greekSalad from '../../assets/images/greek_salad.jpg';
 import bruschetta from '../../assets/images/bruchetta.svg';
 import lemonDessert from '../../assets/images/lemon_dessert.jpg';
@@ -37,19 +38,7 @@ export default function SpecialsSection() {
         </div>
         <div className="special-items-container">
           {weekSpecials.map((item) => (
-            <div className="special-item">
-              <div class="special-item-image-container">
-                <img src={item.image} alt={item.name} />
-              </div>
-              <div className="special-item-description">
-                <div className="special-header-container">
-                  <h3>{item.name}</h3>
-                  <p>{item.price}</p>
-                </div>
-                <p>{item.description}</p>
-                <button>Order a delivery</button>
-              </div>
-            </div>
+            <SpecialItem {...item} key={item.name} />
           ))}
         </div>
       </div>

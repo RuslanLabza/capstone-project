@@ -6,8 +6,8 @@
   padding: 50px 20px;
   background-color: #f4f4f4;
   text-align: left;
-  display: grid;
-  grid-template-columns: 2fr 2fr 2fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 40px;
 }
 

@@ -1,5 +1,5 @@
 .footer {
-  background-color: white;
+  background-color: rgb(237, 239, 238);
 }
 
 .footer-container {
@@ -7,6 +7,7 @@
   color: #495e57;
   text-align: center;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: top;
   gap: 20px;
