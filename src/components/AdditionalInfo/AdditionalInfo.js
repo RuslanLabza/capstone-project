@@ -6,7 +6,7 @@ export default function AdditionalInfo() {
   return (
     <section className="additional-info-section">
       <div className="container additional-info-section-container">
-        <div className='additional-info-description'>
+        <div className="additional-info-description">
           <h2>Little Lemon</h2>
           <p>Chicago</p>
           <p>
@@ -15,9 +15,17 @@ export default function AdditionalInfo() {
             veniam consequat sunt nostrud amet.
           </p>
         </div>
-        <div className='additional-info-image-container'>
-          <img src={imageA} className='additional-info-image-a' alt='Mario and Andiron' />
-          <img src={imageB} className='additional-info-image-b' alt='Mario and Andiron' />
+        <div className="additional-info-image-container">
+          <img
+            src={imageA}
+            className="additional-info-image-a"
+            alt="Mario and Andiron"
+          />
+          <img
+            src={imageB}
+            className="additional-info-image-b"
+            alt="Mario and Andiron"
+          />
         </div>
       </div>
     </section>

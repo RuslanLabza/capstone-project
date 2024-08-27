@@ -3,6 +3,7 @@ import SpecialItem from './SpecialItem';
 import greekSalad from '../../assets/images/greek_salad.jpg';
 import bruschetta from '../../assets/images/bruchetta.svg';
 import lemonDessert from '../../assets/images/lemon_dessert.jpg';
+import LinkButton from '../LinkButton/LinkButton';
 
 export default function SpecialsSection() {
   const weekSpecials = [
@@ -34,7 +35,9 @@ export default function SpecialsSection() {
       <div className="container specials-section-container">
         <div className="special-header-container">
           <h2>This week specials!</h2>
-          <button>Online Menu</button>
+          <LinkButton style={{ padding: '20px 30px' }} to="/menu">
+            Online Menu
+          </LinkButton>
         </div>
         <div className="special-items-container">
           {weekSpecials.map((item) => (

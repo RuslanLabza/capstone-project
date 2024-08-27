@@ -1,0 +1,13 @@
+.link-button {
+  font-size: 1.1rem;
+  color: #000;
+  background-color: rgb(244, 206, 20);
+  border-radius: 10px;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.link-button:hover {
+  background-color: rgb(195, 165, 16);
+}
