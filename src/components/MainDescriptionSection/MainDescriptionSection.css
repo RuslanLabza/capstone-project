@@ -1,6 +1,5 @@
 .description-section {
   background-color: rgb(73, 94, 87);
-  margin-top: 74px;
 }
 
 .description-section-container {
@@ -31,20 +30,6 @@
 
 .description-section .description-section-city {
   font-size: 2rem;
-}
-
-.description-section button {
-  padding: 10px 20px;
-  font-size: 1.1rem;
-  color: #000;
-  background-color: rgb(244, 206, 20);
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-}
-
-.description-section button:hover {
-  background-color: rgb(195, 165, 16);
 }
 
 .description-section-image-container {

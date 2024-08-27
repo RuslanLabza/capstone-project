@@ -1,41 +1,42 @@
 import './Nav.css';
 import burgerIcon from '../../assets/images/icon _hamburger_menu.svg';
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setMenuOpen((state => !state));
+    setMenuOpen((state) => !state);
   };
 
   return (
     <>
-      <button className='burger-menu-button' onClick={toggleMenu}>
-        <img className='burger-menu-icon'src={burgerIcon} alt="Menu"/>
+      <button className="burger-menu-button" onClick={toggleMenu}>
+        <img className="burger-menu-icon" src={burgerIcon} alt="Menu" />
       </button>
       <nav className={`nav ${menuOpen ? 'show' : ''}`}>
         <ul>
           <li>
-            <a href="#">Home</a>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <a href="#">About</a>
+            <NavLink to="/about">About</NavLink>
           </li>
           <li>
-            <a href="#">Menu</a>
+            <NavLink to="/menu">Menu</NavLink>
           </li>
           <li>
-            <a href="#">Reservations</a>
+            <NavLink to="/reservations">Reservations</NavLink>
           </li>
           <li>
-            <a href="#">Order online</a>
+            <NavLink to="/order">Order online</NavLink>
           </li>
           <li>
-            <a href="#">Login</a>
+            <NavLink to="/login">Login</NavLink>
           </li>
         </ul>
       </nav>
-      </>
+    </>
   );
 }

@@ -41,6 +41,10 @@
   text-decoration: underline;
 }
 
+.nav a.active {
+  color: rgb(244, 206, 20);
+}
+
 @media (max-width: 768px) {
   .burger-menu-button {
     display: block;

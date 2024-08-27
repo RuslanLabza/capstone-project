@@ -1,5 +1,6 @@
-import './MainDescription.css';
+import './MainDescriptionSection.css';
 import image from '../../assets/images/restauranfood.jpg';
+import LinkButton from '../LinkButton/LinkButton';
 
 export default function MainDescription() {
   return (
@@ -12,7 +13,9 @@ export default function MainDescription() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <button>Reserve a Table</button>
+          <LinkButton style={{ padding: '10px 20px' }} to="/reservations">
+            Reserve a Table
+          </LinkButton>
         </div>
         <div className="description-section-image-container">
           <img

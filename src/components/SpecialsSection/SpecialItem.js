@@ -1,3 +1,5 @@
+import LinkButton from '../LinkButton/LinkButton';
+
 export default function SpecialItem({ name, image, price, description }) {
   return (
     <div className="special-item" key={name}>
@@ -10,7 +12,9 @@ export default function SpecialItem({ name, image, price, description }) {
           <p>{price}</p>
         </div>
         <p>{description}</p>
-        <button>Order a delivery</button>
+        <LinkButton style={{ padding: '.5rem' }} to="/order">
+          Order a delivery
+        </LinkButton>
       </div>
     </div>
   );
