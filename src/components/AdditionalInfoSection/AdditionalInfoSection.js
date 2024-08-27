@@ -1,8 +1,8 @@
-import './AdditionalInfo.css';
+import './AdditionalInfoSection.css';
 import imageA from '../../assets/images/Mario and Adrian A.jpg';
 import imageB from '../../assets/images/Mario and Adrian b.jpg';
 
-export default function AdditionalInfo() {
+export default function AdditionalInfoSection() {
   return (
     <section className="additional-info-section">
       <div className="container additional-info-section-container">

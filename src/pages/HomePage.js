@@ -1,15 +1,15 @@
-import MainDescription from '../components/MainDescription/MainDescription';
+import MainDescriptionSection from '../components/MainDescriptionSection/MainDescriptionSection';
 import SpecialsSection from '../components/SpecialsSection/SpecialsSection';
 import TestimonialsSection from '../components/TestimonialsSection/TestimonialsSection';
-import AdditionalInfo from '../components/AdditionalInfo/AdditionalInfo';
+import AdditionalInfoSection from '../components/AdditionalInfoSection/AdditionalInfoSection';
 
 export default function HomePage() {
   return (
     <>
-      <MainDescription />
+      <MainDescriptionSection />
       <SpecialsSection />
       <TestimonialsSection />
-      <AdditionalInfo />
+      <AdditionalInfoSection />
     </>
   );
 }

@@ -1,4 +1,4 @@
-import './MainDescription.css';
+import './MainDescriptionSection.css';
 import image from '../../assets/images/restauranfood.jpg';
 import LinkButton from '../LinkButton/LinkButton';
 
