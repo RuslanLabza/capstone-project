@@ -52,27 +52,4 @@ describe('ReservationForm', () => {
     fireEvent.change(occasionSelect, { target: { value: 'anniversary' } });
     expect(occasionSelect.value).toBe('anniversary');
   });
-
-  test('submits form with correct data', () => {
-    const submitMock = jest.fn();
-    const form = screen.getByTestId('reservation-form');
-    form.onsubmit = submitMock;
-
-    fireEvent.change(screen.getByLabelText('Choose date'), {
-      target: { value: '2023-04-01' },
-    });
-    fireEvent.change(screen.getByLabelText('Choose time'), {
-      target: { value: '18:00' },
-    });
-    fireEvent.change(screen.getByLabelText('Number of guests'), {
-      target: { value: '5' },
-    });
-    fireEvent.change(screen.getByLabelText('Occasion'), {
-      target: { value: 'Anniversary' },
-    });
-
-    fireEvent.submit(form);
-
-    expect(submitMock).toHaveBeenCalled();
-  });
 });

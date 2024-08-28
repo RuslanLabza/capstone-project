@@ -1,26 +1,32 @@
 import './Main.css';
 import { Suspense, useReducer } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import HomePage from '../../pages/HomePage';
 import ReservationsPage from '../../pages/ReservationsPage ';
 import AboutPage from '../../pages/AboutPage';
 import MenuPage from '../../pages/MenuPage';
 import OrderPage from '../../pages/OrderPage';
 import LoginPage from '../../pages/LoginPage';
-
-export function updateTimes(state, action) {
-  return state;
-}
-
-export function initializeTimes() {
-  return ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-}
+import ConfirmationPage from '../../pages/ConfirmationPage';
+import { submitAPI } from '../../utils/mockAPI';
 
 export default function Main() {
-  const [availableTimes, dispatchAvailableTimes] = useReducer(
-    updateTimes,
-    initializeTimes()
-  );
+  const [availableTimes, dispatchAvailableTimes] = useReducer(updateTimes, []);
+
+  const navigate = useNavigate();
+
+  function updateTimes(state, action) {
+    return action;
+  }
+
+  function submitForm(formData, clearForm) {
+    submitAPI(formData).then((result) => {
+      if (result) {
+        navigate('/confirmation');
+        clearForm();
+      }
+    });
+  }
 
   return (
     <main className="main">
@@ -35,11 +41,13 @@ export default function Main() {
               <ReservationsPage
                 availableTimes={availableTimes}
                 dispatchAvailableTimes={dispatchAvailableTimes}
+                submitForm={submitForm}
               />
             }
           />
           <Route path="/order" element={<OrderPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/confirmation" element={<ConfirmationPage />} />
           <Route path="*" element={<HomePage />} />
         </Routes>
       </Suspense>
