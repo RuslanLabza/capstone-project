@@ -1,27 +1,49 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './ReservationForm.css';
+import { fetchAPI } from '../../utils/mockAPI';
+import formatDate from '../../utils/formatDate';
 
 export default function ReservationForm({
   availableTimes,
   dispatchAvailableTimes,
+  submitForm,
 }) {
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('17:00');
+  const [date, setDate] = useState(formatDate(new Date()));
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState('birthday');
+  const [time, setTime] = useState('');
+
+  useEffect(() => {
+    const getAvailableTimes = async () => {
+      const data = await fetchAPI(date);
+      dispatchAvailableTimes(data);
+      if (Array.isArray(data) && data.length > 0) {
+        setTime(data[0]);
+      } else {
+        // Handle the case when data is not an array or is empty
+        console.error('No available times received');
+      }
+    };
+
+    getAvailableTimes();
+  }, [date]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(
-      `date: ${date}; time: ${time}; guests: ${guests}; occasion: ${occasion}`
+    submitForm(
+      {
+        date,
+        time,
+        guests,
+        occasion,
+      },
+      clearForm
     );
-    clearForm();
   };
 
   const clearForm = () => {
-    setDate('');
-    setTime('17:00');
+    setDate(formatDate(new Date()));
     setGuests(1);
     setOccasion('role');
   };
@@ -40,10 +62,7 @@ export default function ReservationForm({
             type="date"
             id="res-date"
             value={date}
-            onChange={(e) => {
-              setDate(e.target.value);
-              dispatchAvailableTimes(e.target.value);
-            }}
+            onChange={(e) => setDate(e.target.value)}
           />
         </div>
         <div>
