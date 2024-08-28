@@ -1,25 +1,31 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import './ReservationForm.css';
 import { fetchAPI } from '../../utils/mockAPI';
 import formatDate from '../../utils/formatDate';
+import validateInput from '../../utils/validators/validateInput';
+import requiredValidator from '../../utils/validators/requiredValidator';
+import minValidator from '../../utils/validators/minValidator';
+import maxValidator from '../../utils/validators/maxValidator';
+import dateValidator from '../../utils/validators/dateValidator';
 
 export default function ReservationForm({
   availableTimes,
   dispatchAvailableTimes,
   submitForm,
 }) {
-  const [date, setDate] = useState(formatDate(new Date()));
-  const [guests, setGuests] = useState(1);
-  const [occasion, setOccasion] = useState('birthday');
-  const [time, setTime] = useState('');
+  const [date, setDate] = useState({ value: formatDate(new Date()), touched: false, errors: [] });
+  const [guests, setGuests] = useState({ value: 1, touched: false, errors: [] });
+  const [occasion, setOccasion] = useState({ value: 'birthday', touched: false, errors: [] });
+  const [time, setTime] = useState({ value: '', touched: false, errors: validateInput(requiredValidator('')) });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
     const getAvailableTimes = async () => {
-      const data = await fetchAPI(date);
+      const data = await fetchAPI(date.value);
       dispatchAvailableTimes(data);
       if (Array.isArray(data) && data.length > 0) {
-        setTime(data[0]);
+        setTime(time => ({ ...time, value: data[0], errors: validateInput(requiredValidator(data[0]))}));
       } else {
         // Handle the case when data is not an array or is empty
         console.error('No available times received');
@@ -29,23 +35,40 @@ export default function ReservationForm({
     getAvailableTimes();
   }, [date]);
 
+  const isFormValid = useCallback(() => {
+    return date.errors.length === 0 && time.errors.length === 0 && guests.errors.length === 0 && occasion.errors.length === 0;
+  }, [date, time, guests, occasion]);
+
+  const showErrors = (errors) => {
+    return errors.map((error) => (
+      <p key={error} style={{ color: 'red' }}>{error}</p>
+    ));
+  };
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    submitForm(
-      {
-        date,
-        time,
-        guests,
-        occasion,
-      },
-      clearForm
-    );
+    setIsSubmitted(true);
+    if(isFormValid()) {
+      submitForm(
+        {
+          date: date.value,
+          time: time.value,
+          guests: guests.value,
+          occasion: occasion.value,
+        },
+        clearForm
+      );
+    } else {
+      setTime(time => ({ ...time, errors: validateInput(requiredValidator(time.value))}));
+    }
   };
 
   const clearForm = () => {
-    setDate(formatDate(new Date()));
-    setGuests(1);
-    setOccasion('role');
+    setTime({ value: '', touched: false, errors: [] });
+    setDate({ value: formatDate(new Date()), touched: false, errors: [] });
+    setGuests({ value: 1, touched: false, errors: [] });
+    setOccasion({ value: 'birthday', touched: false, errors: [] });
   };
 
   return (
@@ -61,16 +84,18 @@ export default function ReservationForm({
           <input
             type="date"
             id="res-date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
+            value={date.value}
+            onChange={(e) => setDate({value: e.target.value, touched: true, errors: validateInput(requiredValidator(e.target.value), dateValidator(e.target.value))})}
+            required
           />
+          {date.touched || isSubmitted ? showErrors(date.errors) : null}
         </div>
         <div>
           <label htmlFor="res-time">Choose time</label>
           <select
             id="res-time"
-            value={time}
-            onChange={(e) => setTime(e.target.value)}
+            value={time.value}
+            onChange={(e) => setTime({value: e.target.value, touched: true, errors: validateInput(requiredValidator(e.target.value))})}
           >
             {availableTimes.map((availableTime) => (
               <option value={availableTime} key={availableTime}>
@@ -78,6 +103,7 @@ export default function ReservationForm({
               </option>
             ))}
           </select>
+          {time.touched || isSubmitted ? showErrors(time.errors) : null}
         </div>
         <div>
           <label htmlFor="guests">Number of guests</label>
@@ -87,22 +113,25 @@ export default function ReservationForm({
             min="1"
             max="10"
             id="guests"
-            value={guests}
-            onChange={(e) => setGuests(e.target.value)}
+            value={guests.value}
+            onChange={(e) => setGuests({value: e.target.value, touched: true, errors: validateInput(requiredValidator(e.target.value), minValidator(e.target.value, 1), maxValidator(e.target.value, 10))})}
           />
+          {guests.touched || isSubmitted ? showErrors(guests.errors) : null}
         </div>
         <div>
           <label htmlFor="occasion">Occasion</label>
           <select
             id="occasion"
-            value={occasion}
-            onChange={(e) => setOccasion(e.target.value)}
+            value={occasion.value}
+            onChange={(e) => setOccasion({value: e.target.value, touched: true, errors: validateInput(requiredValidator(e.target.value))})}
+            required
           >
             <option value={'birthday'}>Birthday</option>
             <option value={'anniversary'}>Anniversary</option>
           </select>
+          {occasion.touched || isSubmitted ? showErrors(occasion.errors) : null}
         </div>
-        <button type="submit">Make Your reservation</button>
+        <button type="submit" disabled={!isFormValid()}>Make Your reservation</button>
       </form>
     </>
   );
