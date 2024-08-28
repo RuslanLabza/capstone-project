@@ -8,5 +8,8 @@ module.exports = {
     },
     transformIgnorePatterns: [
       "/node_modules/(?!@babel).+\\.js$"
-    ]
+    ],
+    moduleNameMapper: {
+        "\\.(css|less|scss|sass)$": "jest-css-modules"
+      }
   };
