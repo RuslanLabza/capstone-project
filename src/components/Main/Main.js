@@ -1,13 +1,13 @@
 import './Main.css';
 import { Suspense, useReducer } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import HomePage from '../../pages/HomePage';
-import ReservationsPage from '../../pages/ReservationsPage';
-import AboutPage from '../../pages/AboutPage';
-import MenuPage from '../../pages/MenuPage';
-import OrderPage from '../../pages/OrderPage';
-import LoginPage from '../../pages/LoginPage';
-import ConfirmationPage from '../../pages/ConfirmationPage';
+import HomePage from '../../pages/HomePage/HomePage';
+import ReservationsPage from '../../pages/ReservationsPage/ReservationsPage';
+import AboutPage from '../../pages/AboutPage/AboutPage';
+import MenuPage from '../../pages/MenuPage/MenuPage';
+import OrderPage from '../../pages/OrderPage/OrderPage';
+import LoginPage from '../../pages/LoginPage/LoginPage';
+import ConfirmationPage from '../../pages/ConfirmationPage/ConfirmationPage';
 import { submitAPI } from '../../utils/mockAPI';
 
 export default function Main() {

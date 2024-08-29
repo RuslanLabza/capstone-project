@@ -1,17 +1,84 @@
-input:focus,
-select:focus,
-button:focus {
-  outline: 2px solid #4a90e2;
-  outline-offset: 2px;
-}
-
-.error-message {
-  color: #d32f2f;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
-}
-
-button[type='submit'][aria-disabled='true'] {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
+.reservation-form {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .reservation-form h2 {
+    color: #333;
+    border-bottom: 2px solid #ffd700;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .reservation-form form {
+    display: grid;
+    gap: 20px;
+  }
+  
+  .reservation-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .reservation-form input,
+  .reservation-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .reservation-form input:focus,
+  .reservation-form select:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+  }
+  
+  .reservation-form button[type="submit"] {
+    background-color: #f4ce14;
+    color: #333333;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-family: 'Karla', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .reservation-form button[type="submit"]:hover:not(:disabled) {
+    background-color: #e1c013;
+  }
+  
+  .reservation-form button[type="submit"]:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+  }
+  
+  .error-message {
+    color: #d32f2f;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  @media (max-width: 600px) {
+    .reservation-form {
+      padding: 20px;
+    }
+  
+    .reservation-form input,
+    .reservation-form select,
+    .reservation-form button {
+      font-size: 14px;
+    }
+  }
