@@ -100,7 +100,7 @@ export default function ReservationForm({
   };
 
   return (
-    <>
+    <div className="reservation-form">
       <h2 id="reservation-form-title">Book Now</h2>
       <form
         style={{ display: 'grid', maxWidth: '200px', gap: '20px' }}
@@ -210,9 +210,9 @@ export default function ReservationForm({
           disabled={!isFormValid()}
           aria-disabled={!isFormValid()}
         >
-          Make Your reservation
+          Make Your Reservation
         </button>
       </form>
-    </>
+    </div>
   );
 }

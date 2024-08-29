@@ -1,0 +1,52 @@
+.reservations-page {
+    margin-bottom: 20px;
+}
+
+.reservations-page h1 {
+    color: #333;
+    border-bottom: 2px solid #ffd700;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .available-hours-section {
+    margin-top: 40px;
+  }
+  
+  .available-hours-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .available-hours-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .available-hours-table caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .available-hours-table th,
+  .available-hours-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .available-hours-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .available-hours-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  @media (max-width: 600px) {
+    .available-hours-table {
+      font-size: 14px;
+    }
+  }
