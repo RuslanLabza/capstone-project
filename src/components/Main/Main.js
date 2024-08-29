@@ -2,7 +2,7 @@ import './Main.css';
 import { Suspense, useReducer } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import HomePage from '../../pages/HomePage';
-import ReservationsPage from '../../pages/ReservationsPage ';
+import ReservationsPage from '../../pages/ReservationsPage';
 import AboutPage from '../../pages/AboutPage';
 import MenuPage from '../../pages/MenuPage';
 import OrderPage from '../../pages/OrderPage';
@@ -29,8 +29,14 @@ export default function Main() {
   }
 
   return (
-    <main className="main">
-      <Suspense fallback={<div style={{ marginTop: '100px' }}>Loading...</div>}>
+    <main id="main-content" className="main">
+      <Suspense
+        fallback={
+          <div role="status" aria-live="polite" className="loading-indicator">
+            Loading...
+          </div>
+        }
+      >
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
