@@ -61,7 +61,9 @@ describe('ReservationForm', () => {
       fireEvent.change(dateInput, { target: { value: '2024-08-20' } });
       fireEvent.click(submitButton);
 
-      expect(screen.getByText('Date is in the past, choose today or a future date')).toBeInTheDocument();
+      expect(
+        screen.getByText('Date is in the past, choose today or a future date')
+      ).toBeInTheDocument();
     });
 
     test('displays error for invalid time', () => {
@@ -81,18 +83,22 @@ describe('ReservationForm', () => {
       fireEvent.change(guestsInput, { target: { value: 0 } });
       fireEvent.click(submitButton);
 
-      expect(screen.getByText('Guests must be more than 1')).toBeInTheDocument();
+      expect(
+        screen.getByText('Guests must be more than 1')
+      ).toBeInTheDocument();
     });
 
     test('displays error for guests more than 10', () => {
-        const guestsInput = screen.getByLabelText('Number of guests');
-        const submitButton = screen.getByText('Make Your reservation');
-  
-        fireEvent.change(guestsInput, { target: { value: 12 } });
-        fireEvent.click(submitButton);
-  
-        expect(screen.getByText('Guests must be less than 10')).toBeInTheDocument();
-      });
+      const guestsInput = screen.getByLabelText('Number of guests');
+      const submitButton = screen.getByText('Make Your reservation');
+
+      fireEvent.change(guestsInput, { target: { value: 12 } });
+      fireEvent.click(submitButton);
+
+      expect(
+        screen.getByText('Guests must be less than 10')
+      ).toBeInTheDocument();
+    });
 
     test('displays error for missing occasion', () => {
       const occasionSelect = screen.getByLabelText('Occasion');

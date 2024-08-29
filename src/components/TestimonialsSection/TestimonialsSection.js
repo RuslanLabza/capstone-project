@@ -24,13 +24,21 @@ export default function TestimonialsSection() {
       comment: 'Ut labore et dolore',
     },
   ];
+
   return (
-    <section className="testimonials-section">
+    <section
+      className="testimonials-section"
+      aria-labelledby="testimonials-title"
+    >
       <div className="container testimonials-section-container">
-        <h2>Testimonials</h2>
-        <div className="testimonials-grid">
+        <h2 id="testimonials-title">Testimonials</h2>
+        <div className="testimonials-grid" role="list">
           {testimonials.map((testimonial) => (
-            <Testimonial {...testimonial} key={testimonial.name} />
+            <Testimonial
+              {...testimonial}
+              key={testimonial.name}
+              role="listitem"
+            />
           ))}
         </div>
       </div>

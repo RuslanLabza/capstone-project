@@ -31,17 +31,22 @@ export default function SpecialsSection() {
   ];
 
   return (
-    <section className="specials-section">
+    <section className="specials-section" aria-labelledby="specials-title">
       <div className="container specials-section-container">
         <div className="special-header-container">
-          <h2>This week specials!</h2>
-          <LinkButton style={{ padding: '20px 30px' }} to="/menu">
+          <h2 id="specials-title">This week specials!</h2>
+          <LinkButton
+            style={{ padding: '20px 30px' }}
+            to="/menu"
+            aria-label="View full online menu"
+            role="button"
+          >
             Online Menu
           </LinkButton>
         </div>
-        <div className="special-items-container">
+        <div className="special-items-container" role="list">
           {weekSpecials.map((item) => (
-            <SpecialItem {...item} key={item.name} />
+            <SpecialItem {...item} key={item.name} role="listitem" />
           ))}
         </div>
       </div>
