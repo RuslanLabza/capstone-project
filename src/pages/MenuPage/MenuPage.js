@@ -1,6 +1,35 @@
 import UnderDevelopment from '../../components/UnderDevelopment/UnderDevelopment';
+import { useState, useEffect } from 'react';
 
 export default function MenuPage() {
+  // Fetch data example
+  // const [isMenuLoading, setIsMenuLoading] = useState(false);
+  // const [menu, setMenu] = useState([]);
+  // const [isMenuError, setIsMenuError] = useState('');
+
+  // useEffect(() => {
+  //   const fetchMenu = async () => {
+  //     try {
+  //       setIsMenuLoading(true);
+  //       const menuResponse = await fetch('https://www.menuurl.com/');
+  //       const menuData = menuResponse.json();
+  
+  //       if(!menuResponse.ok) {
+  //         //log logic
+  //         throw Error('Failed to download menu');
+  //       }
+
+  //       setMenu(menuData);
+  //       setIsMenuLoading(false);
+  //     } catch (error) {
+  //       setIsMenuError(error);
+  //       setIsMenuLoading(false);
+  //     }
+  //   }
+
+  //   fetchMenu();
+  // }, [])
+
   return (
     <div className="container">
       <UnderDevelopment title="Little Lemon Menu">
