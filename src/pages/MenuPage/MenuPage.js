@@ -1,5 +1,5 @@
 import UnderDevelopment from '../../components/UnderDevelopment/UnderDevelopment';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 
 export default function MenuPage() {
   // Fetch data example
